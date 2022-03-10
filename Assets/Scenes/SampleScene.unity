@@ -2484,6 +2484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8057178382952954692, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
     - target: {fileID: 8057178382952954693, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: shadow
       value: 
