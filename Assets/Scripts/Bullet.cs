@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public GameObject player;
+    
     private int ttl = 250;
+    public GameObject explosionPrefab;
+
+    private void Start()
+    {
+       
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player")){ return; }
-        Destroy(gameObject); 
+        
+        GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, Quaternion.identity);
+        explosion.GetComponent<ParticleSystem>().Play();
+        Destroy(explosion, 5f);
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
+        
     }
 
     void FixedUpdate()
