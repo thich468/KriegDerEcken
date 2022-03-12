@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Enemy : MonoBehaviour
 {
 
@@ -13,14 +14,16 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        rb.rotation = 180f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(rb.rotation);
         Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        float angle = Mathf.Atan2(direction.x,direction.y) * Mathf.Rad2Deg;
+        rb.rotation = -angle;
         direction.Normalize();
         movement = direction;
     }
