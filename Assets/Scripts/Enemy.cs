@@ -21,21 +21,29 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.x,direction.y) * Mathf.Rad2Deg;
-        rb.rotation = -angle;
-        direction.Normalize();
-        movement = direction;
+        if (transform != null && player != null)
+        {
+            Vector3 direction = player.position - transform.position;
+            float angle = Mathf.Atan2(direction.x,direction.y) * Mathf.Rad2Deg;
+            rb.rotation = -angle;
+            direction.Normalize();
+            movement = direction;
+        }
+        
     }
 
     public void FixedUpdate()
     {
-        Vector3 direction = player.position - transform.position;
-        Debug.Log(direction.magnitude);
-        if (direction.magnitude > distance) 
+        if (transform != null && player != null)
         {
-            moveCharacter(movement);
+            Vector3 direction = player.position - transform.position;
+            Debug.Log(direction.magnitude);
+            if (direction.magnitude > distance)
+            {
+                moveCharacter(movement);
+            }
         }
+        
         
     }
 

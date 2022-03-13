@@ -10,12 +10,17 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     public List<GameObject> enemyList = new List<GameObject>();
     public GameObject gameOverCanvas;
+    public List<GameObject> enemyPrefabs = new List<GameObject>();
+    public int enemiesPerWave = 10;
+    public float[] waveRange = { 6f, 10f };
+    private int wave = 0;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         NewWave();
+        
     }
 
     // Update is called once per frame
@@ -34,17 +39,19 @@ public class GameManager : MonoBehaviour
     //new wave of enemies
     void NewWave()
     {
+        if (player == null) { return; }
         Vector3 playerPos = player.transform.position;
         Debug.Log(playerPos.ToString());
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < enemiesPerWave; i++)
         {
-            float x = Random.Range(playerPos.x + 7, playerPos.x + 13);
-            float y = Random.Range(playerPos.y + 7, playerPos.y + 13);
+            float x = Random.Range(playerPos.x + waveRange[0], playerPos.x + waveRange[1]);
+            float y = Random.Range(playerPos.y + waveRange[0], playerPos.y + waveRange[1]);
             Vector2 vector = Quaternion.Euler(0,0, Random.Range(0f, 359.9f))* new Vector2(x,y);
             Vector3 enemyPos = new Vector3(vector.x, vector.y, playerPos.z);
-            GameObject enemy = Instantiate(enemyPrefab, enemyPos, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], enemyPos, Quaternion.identity);
             enemyList.Add(enemy);
         }
+        wave++;
 
     }
 
@@ -63,5 +70,10 @@ public class GameManager : MonoBehaviour
     public List<GameObject> GetEnemyList()
     {
         return enemyList;
+    }
+
+    public int GetWave()
+    {
+        return wave;
     }
 }
