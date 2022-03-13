@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         this.transform.position = this.transform.position + new Vector3(horizontal*speed*Time.fixedDeltaTime, vertical*speed * Time.fixedDeltaTime, 0);
