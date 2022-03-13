@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     public float moveSpeed = 5f;
+    public float distance = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = player.position - transform.position;
         Debug.Log(direction.magnitude);
-        if (direction.magnitude > 3f) 
+        if (direction.magnitude > distance) 
         {
             moveCharacter(movement);
         }
