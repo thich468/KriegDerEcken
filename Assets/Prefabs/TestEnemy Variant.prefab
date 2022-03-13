@@ -66,7 +66,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6980731809738858015, guid: 4022f9cc02278ed4d8b5dc6b8cdb909a, type: 3}
   m_PrefabInstance: {fileID: 3138712098581287985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6653579686787085949
+--- !u!114 &2549170862443225048
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5435414421489420846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e0043c4a1f2ed419f40a80671bcbc1, type: 3}
+  m_Script: {fileID: 11500000, guid: fb1fca04d0f9fa148bf35e3e8dfa1dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  distance: 0
