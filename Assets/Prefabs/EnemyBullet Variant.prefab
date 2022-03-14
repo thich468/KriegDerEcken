@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8951512838624170865, guid: ab65175f2cd84f54c8e21b5b981c8bd9, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2682890597573649212, guid: ab65175f2cd84f54c8e21b5b981c8bd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab65175f2cd84f54c8e21b5b981c8bd9, type: 3}

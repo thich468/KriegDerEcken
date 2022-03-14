@@ -29,7 +29,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(explosion, 5f);
 
             //test game
-            gameManager.GameOver();
+            //gameManager.GameOver();
             //Destroy(collision.gameObject);
 
 

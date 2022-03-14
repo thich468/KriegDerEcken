@@ -806,7 +806,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 3525159241484312941, guid: 847f67c9922c6d14aa563714fb0ec98b, type: 3}
   - {fileID: 1506322447557637190, guid: 0bec7fbd8f037834d9d0f3c8e0998fdf, type: 3}
-  enemiesPerWave: 3
+  enemiesPerWave: 5
   waveRange:
   - 8
   - 12
@@ -3349,6 +3349,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: gameManager
       value: 

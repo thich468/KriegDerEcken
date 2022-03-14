@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         if (player == null) { return; }
         Vector3 playerPos = player.transform.position;
-        Debug.Log(playerPos.ToString());
+        //Debug.Log(playerPos.ToString());
         for(int i = 0; i < enemiesPerWave; i++)
         {
             float x = Random.Range(playerPos.x + waveRange[0], playerPos.x + waveRange[1]);
