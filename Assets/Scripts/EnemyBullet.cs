@@ -30,7 +30,7 @@ public class EnemyBullet : MonoBehaviour
 
             //test game
             gameManager.GameOver();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
 
 
             Destroy(gameObject);

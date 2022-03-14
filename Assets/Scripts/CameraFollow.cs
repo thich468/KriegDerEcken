@@ -17,6 +17,7 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         if (transform == null || target == null) { return; }
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, 1.0f - smoothness);
+        Vector3 oldPos = transform.position;
+        transform.position = Vector3.Lerp(oldPos, target.position + offset, 1.0f - smoothness);
     }
 }

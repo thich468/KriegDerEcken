@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
             float x = Random.Range(playerPos.x + waveRange[0], playerPos.x + waveRange[1]);
             float y = Random.Range(playerPos.y + waveRange[0], playerPos.y + waveRange[1]);
             Vector2 vector = Quaternion.Euler(0,0, Random.Range(0f, 359.9f))* new Vector2(x,y);
+            vector = new Vector2(playerPos.x, playerPos.y) + vector;
             Vector3 enemyPos = new Vector3(vector.x, vector.y, playerPos.z);
             GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], enemyPos, Quaternion.identity);
             enemyList.Add(enemy);
@@ -59,12 +60,14 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 
     //Restart
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public List<GameObject> GetEnemyList()
