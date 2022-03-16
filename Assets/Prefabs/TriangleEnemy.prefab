@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125405828190501609}
   - component: {fileID: 8944681494525298854}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 2106824595959847976}
   - component: {fileID: 2176873967556176993}
   - component: {fileID: 9093646918476796675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TriangleEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

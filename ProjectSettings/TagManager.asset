@@ -7,15 +7,16 @@ TagManager:
   - Bullet
   - GameManager
   - Enemy
+  - Health
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemies
   - Water
   - UI
-  - 
-  - 
+  - Items
+  - Player
   - 
   - 
   - 

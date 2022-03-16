@@ -989,7 +989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &757262996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 3525159241484312941, guid: 847f67c9922c6d14aa563714fb0ec98b, type: 3}
   - {fileID: 1506322447557637190, guid: 0bec7fbd8f037834d9d0f3c8e0998fdf, type: 3}
-  enemiesPerWave: 5
+  enemiesPerWave: 2
   waveRange:
   - 10
   - 15
@@ -1302,7 +1302,7 @@ Transform:
   m_GameObject: {fileID: 858566515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.0251, y: -0.0453, z: 10}
-  m_LocalScale: {x: 35, y: 35, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 0}
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 0
@@ -4046,9 +4046,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: hp
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 757262996}
+    - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 5453201901623892288, guid: 94c81914ec608cd41acb52f5a31f7535, type: 3}
+    - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: healthItemPrefab
+      value: 
+      objectReference: {fileID: 4869052927088705317, guid: b7c1b5d269fd2844b93b24293d64475a, type: 3}
     - target: {fileID: 8057178381598213602, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -4059,10 +4071,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8057178382952954692, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: m_Mass
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8057178382952954692, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057178382952954692, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8057178382952954692, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: m_UseFullKinematicContacts
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8057178382952954693, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}

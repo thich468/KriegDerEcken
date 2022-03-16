@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public GameManager gameManager;
-    public int hp;
+    public int hp = 15;
     public GameObject explosionPrefab;
+
+    public GameObject healthItemPrefab;
+    private float healthdropProbability = 0.15f;
+    public GameObject healthParticles;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,10 @@ public class PlayerCollision : MonoBehaviour
             Destroy(explosion, 5f);
             Destroy(collision.gameObject);
             gameManager.GetEnemyList().Remove(collision.gameObject);
+            if (Random.Range(0f, 1f) > (1f - healthdropProbability))
+            {
+                SpawnHealthItem(collision.gameObject.transform);
+            }
 
 
             damage(2);
@@ -41,6 +49,21 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             damage(1);
+        }
+
+        if (collision.gameObject.CompareTag("Health"))
+        {
+            Debug.Log("Health Collision!");
+            hp += 5;
+            if(hp > 15)
+            {
+                hp = 15;
+            }
+            GameObject particles = Instantiate(healthParticles, collision.gameObject.transform.position, Quaternion.identity);
+            //particles.transform.localScale = particles.transform.localScale * 3;
+            particles.GetComponent<ParticleSystem>().Play();
+            Destroy(particles, 5f);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -52,6 +75,13 @@ public class PlayerCollision : MonoBehaviour
         {
             gameManager.GameOver();
         }
+    }
+
+    void SpawnHealthItem(Transform trans)
+    {
+        GameObject item = Instantiate(healthItemPrefab, trans.position, Quaternion.identity);
+        Destroy(item, 10f);
+        
     }
 
 
