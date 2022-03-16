@@ -625,8 +625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -317.60004, y: -181.49998}
-  m_SizeDelta: {x: -690.78, y: -418.54}
+  m_AnchoredPosition: {x: -603.56323, y: -401.20337}
+  m_SizeDelta: {x: -1262.7062, y: -857.9467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &470634248
 MonoBehaviour:
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3688,8 +3688,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -317.6, y: -181.5}
-  m_SizeDelta: {x: -690.7803, y: -418.5426}
+  m_AnchoredPosition: {x: -603.56323, y: -401.20337}
+  m_SizeDelta: {x: -1262.7063, y: -857.947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019412631
 MonoBehaviour:
@@ -4057,6 +4057,10 @@ PrefabInstance:
       propertyPath: explosionPrefab
       value: 
       objectReference: {fileID: 5453201901623892288, guid: 94c81914ec608cd41acb52f5a31f7535, type: 3}
+    - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
+      propertyPath: healthParticles
+      value: 
+      objectReference: {fileID: 1372324614584603890, guid: 1d830c447e080dc46999f382f64229ef, type: 3}
     - target: {fileID: 3355443937141145867, guid: 17ce0d89b3d18534994786e257f0e57c, type: 3}
       propertyPath: healthItemPrefab
       value: 
