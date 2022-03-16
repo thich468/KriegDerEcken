@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public float smoothness = 0.1f;
+    public Vector2 min;
+    public Vector2 max;
     Vector3 offset;
     public Transform target;
     // Start is called before the first frame update
