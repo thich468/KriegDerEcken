@@ -39,8 +39,8 @@ public class GameManager : MonoBehaviour
     //new wave of enemies
     void NewWave()
     {
-        //every second wave, one more enemy per wave
-        if(wave % 2 == 0)
+        //every third wave, one more enemy per wave
+        if(wave % 3 == 0)
         {
             enemiesPerWave++;
         }
