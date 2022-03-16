@@ -6,6 +6,7 @@ public class PlayerCollision : MonoBehaviour
 {
     public GameManager gameManager;
     public int hp;
+    public GameObject explosionPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,13 @@ public class PlayerCollision : MonoBehaviour
         {
             //Destroy(gameObject);
             //gameManager.GameOver();
+            GameObject explosion = Instantiate(explosionPrefab, collision.gameObject.transform.position, Quaternion.identity);
+            explosion.transform.localScale = explosion.transform.localScale * 3;
+            explosion.GetComponent<ParticleSystem>().Play();
+            Destroy(explosion, 5f);
+            Destroy(collision.gameObject);
+            gameManager.GetEnemyList().Remove(collision.gameObject);
+
 
             damage(2);
         }

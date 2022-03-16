@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyList = new List<GameObject>();
     public GameObject gameOverCanvas;
     public List<GameObject> enemyPrefabs = new List<GameObject>();
-    public int enemiesPerWave = 10;
+    public int enemiesPerWave = 2;
     public float[] waveRange = { 6f, 10f };
     private int wave = 0;
     // Start is called before the first frame update
@@ -39,6 +39,12 @@ public class GameManager : MonoBehaviour
     //new wave of enemies
     void NewWave()
     {
+        //every second wave, one more enemy per wave
+        if(wave % 2 == 0)
+        {
+            enemiesPerWave++;
+        }
+
         if (player == null) { return; }
         Vector3 playerPos = player.transform.position;
         //Debug.Log(playerPos.ToString());
@@ -52,6 +58,7 @@ public class GameManager : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], enemyPos, Quaternion.identity);
             enemyList.Add(enemy);
         }
+        wave++;
         wave++;
 
     }
