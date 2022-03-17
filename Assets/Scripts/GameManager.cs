@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    float timer;
+    float timer = 0;
     public GameObject player;
     public GameObject enemyPrefab;
     public List<GameObject> enemyList = new List<GameObject>();
@@ -19,14 +19,16 @@ public class GameManager : MonoBehaviour
     public float[] waveRange = { 6f, 10f };
     private int wave = 0;
     private int score = 0;
-    ScoreCounter scoreCounter;
+    public ScoreCounter scoreCounter;
+    AudioManager audioManager;
     // Start is called before the first frame update
 
     void Start()
     {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         timer = 0;
         player = GameObject.FindGameObjectWithTag("Player");
-        scoreCounter = new ScoreCounter();
+        //scoreCounter = new ScoreCounter();
         NewWave();
     }
 
@@ -87,6 +89,9 @@ public class GameManager : MonoBehaviour
     //game over
     public void GameOver()
     {
+        audioManager.audioSource.clip = audioManager.audioClips[0];
+        audioManager.audioSource.Play();
+        StartCoroutine(audioManager.waitAudio());
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
         
@@ -129,4 +134,6 @@ public class GameManager : MonoBehaviour
     {
         return wave;
     }
+
+    
 }
