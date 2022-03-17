@@ -14,11 +14,14 @@ public class GameManager : MonoBehaviour
     public int enemiesPerWave = 10;
     public float[] waveRange = { 6f, 10f };
     private int wave = 0;
+    private int score = 0;
+    ScoreCounter scoreCounter;
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        scoreCounter = new ScoreCounter();
         NewWave();
         
     }
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
+        
     }
 
     //Restart
@@ -68,11 +72,24 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        scoreCounter.SaveHighScore();
     }
 
     public List<GameObject> GetEnemyList()
     {
         return enemyList;
+    }
+
+    public void IncreaseScore()
+    {
+        score += 5;
+        
+    }
+
+    public int GetScore()
+    {
+        
+        return score;
     }
 
     public int GetWave()

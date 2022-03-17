@@ -6,6 +6,7 @@ public class PlayerBullet : MonoBehaviour
 {
     
     private int ttl = 250;
+    
     public GameObject explosionPrefab;
     GameManager gameManager;
 
@@ -22,11 +23,23 @@ public class PlayerBullet : MonoBehaviour
         Destroy(explosion, 5f);
 
         //test game
+
         gameManager.GetEnemyList().Remove(collision.gameObject);
         Destroy(collision.gameObject);
-        
+
         
         Destroy(gameObject);
+        /*if (gameObject.CompareTag("TriangleEnemy"))
+        {
+            gameManager.IncreaseScore(5);
+        }else if (gameObject.CompareTag("DiamondEnemy"))
+        {
+            gameManager.IncreaseScore(10);
+        } */
+
+
+        gameManager.IncreaseScore();
+        
         
     }
 
