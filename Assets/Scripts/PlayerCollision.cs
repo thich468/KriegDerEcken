@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
     public GameObject explosionPrefab;
 
     public GameObject healthItemPrefab;
-    private float healthdropProbability = 0.15f;
+    private float healthdropProbability = 0.05f;
     public GameObject healthParticles;
     // Start is called before the first frame update
     void Start()
@@ -54,7 +54,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("Health"))
         {
             Debug.Log("Health Collision!");
-            hp += 5;
+            hp += 3;
             if(hp > 15)
             {
                 hp = 15;

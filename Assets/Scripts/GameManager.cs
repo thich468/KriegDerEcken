@@ -82,8 +82,6 @@ public class GameManager : MonoBehaviour
         }
 
         wave++;
-        wave++;
-
     }
 
     //game over

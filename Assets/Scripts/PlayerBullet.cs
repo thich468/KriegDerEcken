@@ -10,7 +10,7 @@ public class PlayerBullet : MonoBehaviour
     public GameObject explosionPrefab;
     GameManager gameManager;
     public GameObject healthItemPrefab;
-    private float healthdropProbability = 0.15f;
+    private float healthdropProbability = 0.1f;
 
 
     private void Start()
