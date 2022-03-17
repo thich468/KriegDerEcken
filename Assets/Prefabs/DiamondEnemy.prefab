@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6926536445987205458}
   - component: {fileID: 959598324166963976}
   - component: {fileID: 1191969381048879808}
-  m_Layer: 3
+  - component: {fileID: 1181198560843782036}
+  m_Layer: 0
   m_Name: DiamondEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -150,5 +151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1fca04d0f9fa148bf35e3e8dfa1dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
+  moveSpeed: 7
   distance: 0
+--- !u!114 &1181198560843782036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506322447557637190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7571fa5956322eadea7310cf27f7e158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBorderSize: 0.05
+  indicatorPrefab: {fileID: 7651365547155890337, guid: 48bb44b851143d64d92426e61c3a0f2e, type: 3}

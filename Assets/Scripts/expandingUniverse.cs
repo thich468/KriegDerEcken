@@ -5,7 +5,7 @@ using UnityEngine;
 public class expandingUniverse : MonoBehaviour
 {
 
-    float parralax = 2f;
+    float parralax = 6f;
 
     public float speedX = 0.1f;
     public float speedY = 0.1f;

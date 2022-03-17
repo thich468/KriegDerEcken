@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125405828190501609}
   - component: {fileID: 8944681494525298854}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,8 @@ GameObject:
   - component: {fileID: 2106824595959847976}
   - component: {fileID: 2176873967556176993}
   - component: {fileID: 9093646918476796675}
-  m_Layer: 3
+  - component: {fileID: 4892244163626191769}
+  m_Layer: 0
   m_Name: TriangleEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,7 +148,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1fca04d0f9fa148bf35e3e8dfa1dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   distance: 3
 --- !u!60 &9093646918476796675
 PolygonCollider2D:
@@ -196,3 +197,17 @@ PolygonCollider2D:
       - {x: -0.9818952, y: 2.6641169}
       - {x: -2.6371078, y: 4.453204}
       - {x: -8.440178, y: -2.2539952}
+--- !u!114 &4892244163626191769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525159241484312941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7571fa5956322eadea7310cf27f7e158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBorderSize: 0.05
+  indicatorPrefab: {fileID: 7651365547155890337, guid: 48bb44b851143d64d92426e61c3a0f2e, type: 3}

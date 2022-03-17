@@ -11,6 +11,7 @@ public class PlayerBullet : MonoBehaviour
     public GameObject healthItemPrefab;
     private float healthdropProbability = 0.15f;
 
+
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();

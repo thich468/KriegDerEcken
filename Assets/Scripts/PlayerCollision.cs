@@ -70,7 +70,7 @@ public class PlayerCollision : MonoBehaviour
     private void damage(int amount)
     {
         hp -= amount;
-        Debug.Log(hp + "HP");
+        //Debug.Log(hp + "HP");
         if (hp < 1)
         {
             gameManager.GameOver();
