@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour
         if (transform != null && player != null)
         {
             Vector3 direction = player.position - transform.position;
-            Debug.Log(direction.magnitude);
             if (direction.magnitude > distance)
             {
                 moveCharacter(movement);

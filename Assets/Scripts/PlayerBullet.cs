@@ -7,7 +7,7 @@ public class PlayerBullet : MonoBehaviour
     
     private int ttl = 250;
     public GameObject explosionPrefab;
-    GameManager gameManager;
+    public GameManager gameManager;
 
     private void Start()
     {

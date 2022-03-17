@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 2106824595959847976}
   - component: {fileID: 2176873967556176993}
   - component: {fileID: 9093646918476796675}
+  - component: {fileID: 4892244163626191769}
   m_Layer: 0
   m_Name: TriangleEnemy
   m_TagString: Enemy
@@ -196,3 +197,17 @@ PolygonCollider2D:
       - {x: -0.9818952, y: 2.6641169}
       - {x: -2.6371078, y: 4.453204}
       - {x: -8.440178, y: -2.2539952}
+--- !u!114 &4892244163626191769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3525159241484312941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7571fa5956322eadea7310cf27f7e158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenBorderSize: 0.05
+  indicatorPrefab: {fileID: 7651365547155890337, guid: 48bb44b851143d64d92426e61c3a0f2e, type: 3}
