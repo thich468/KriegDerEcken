@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
 
             //Debug.Log(direction.magnitude);
 
+
             if (direction.magnitude > distance)
             {
                 moveCharacter(movement);

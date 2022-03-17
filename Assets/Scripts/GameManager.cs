@@ -12,17 +12,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] public TargetLineRenderer targetLineRenderer;
     [SerializeField] public Transform[] points;
     public GameObject gameOverCanvas;
+    public GameObject PauseCanvas;
     public List<GameObject> enemyPrefabs = new List<GameObject>();
     public int enemiesPerWave = 2;
 
     public float[] waveRange = { 6f, 10f };
     private int wave = 0;
+    private int score = 0;
+    ScoreCounter scoreCounter;
     // Start is called before the first frame update
 
     void Start()
     {
         timer = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        scoreCounter = new ScoreCounter();
         NewWave();
     }
 
@@ -30,8 +34,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //Debug.Log(enemyList.Count);
-        if(enemyList.Count == 0)
+
+        if (Input.GetKeyDown("escape"))
+        {
+            PauseCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        if (enemyList.Count == 0)
         {
             NewWave();
         }
@@ -77,6 +89,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
+        
     }
 
     //Restart
@@ -84,11 +97,32 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+        scoreCounter.SaveHighScore();
     }
 
     public List<GameObject> GetEnemyList()
     {
         return enemyList;
+    }
+
+    public void Resume()
+    {
+        PauseCanvas.SetActive(false);
+        Time.timeScale = 1;
+
+    }
+
+
+    public void IncreaseScore()
+    {
+        score += 5;
+        
+    }
+
+    public int GetScore()
+    {
+        
+        return score;
     }
 
     public int GetWave()
