@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyPrefab;
     public List<GameObject> enemyList = new List<GameObject>();
     public GameObject gameOverCanvas;
+    public GameObject PauseCanvas;
     public List<GameObject> enemyPrefabs = new List<GameObject>();
     public int enemiesPerWave = 10;
     public float[] waveRange = { 6f, 10f };
@@ -30,9 +31,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        
+
         //Debug.Log(enemyList.Count);
-        if(enemyList.Count == 0)
+
+        if (Input.GetKeyDown("escape"))
+        {
+            PauseCanvas.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        if (enemyList.Count == 0)
         {
             NewWave();
         }
@@ -79,6 +87,14 @@ public class GameManager : MonoBehaviour
     {
         return enemyList;
     }
+
+    public void Resume()
+    {
+        PauseCanvas.SetActive(false);
+        Time.timeScale = 1;
+
+    }
+
 
     public void IncreaseScore()
     {
