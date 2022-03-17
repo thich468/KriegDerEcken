@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 2
   bulletPrefab: {fileID: 6940449315584738527, guid: b921f87af4fb76842a02a0c0787409e8, type: 3}
-  force: 25
+  force: 30
 --- !u!1 &3525159241484312941
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1fca04d0f9fa148bf35e3e8dfa1dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 6
   distance: 3
 --- !u!60 &9093646918476796675
 PolygonCollider2D:

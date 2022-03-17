@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
     //Restart
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         Time.timeScale = 1;
         scoreCounter.SaveHighScore();
     }
