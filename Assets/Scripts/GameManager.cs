@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //scoreCounter = new ScoreCounter();
         NewWave();
+        PlayerPrefs.SetInt("High Score", 420);
     }
 
 
@@ -67,12 +68,13 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < enemiesPerWave; i++)
         {
+            float[] rand = randomRange();
+            float x = Random.Range(playerPos.x + rand[0], playerPos.x + rand[1]);
+            rand = randomRange();
+            float y = Random.Range(playerPos.y + rand[0], playerPos.y + rand[1]);
 
-            float x = Random.Range(playerPos.x + waveRange[0], playerPos.x + waveRange[1]);
-            float y = Random.Range(playerPos.y + waveRange[0], playerPos.y + waveRange[1]);
-
-            Vector2 vector = Quaternion.Euler(0,0, Random.Range(0f, 359.9f))* new Vector2(x,y);
-            vector = new Vector2(playerPos.x, playerPos.y) + vector;
+            Vector2 vector = new Vector2(x, y);
+            
             Vector3 enemyPos = new Vector3(vector.x, vector.y, playerPos.z);
 
             GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
@@ -84,12 +86,44 @@ public class GameManager : MonoBehaviour
         wave++;
     }
 
+    private float[] randomRange()
+    {
+        float min = waveRange[0];
+        float max = waveRange[1];
+
+        float[] res = new float[2];
+
+        int rand = Random.Range(0, 100);
+        if(rand < 25)
+        {
+            res[0] = min;
+            res[1] = max;
+            return res;
+        } if(rand < 50)
+        {
+            res[0] = min;
+            res[1] = -max;
+            return res;
+        } if (rand < 75)
+        {
+            res[0] = -min;
+            res[1] = max;
+            return res;
+        } else
+        {
+            res[0] = -min;
+            res[1] = -max;
+            return res;
+        }
+    }
+
     //game over
     public void GameOver()
     {
         audioManager.audioSource.clip = audioManager.audioClips[0];
         audioManager.audioSource.Play();
         StartCoroutine(audioManager.waitAudio());
+        scoreCounter.SaveHighScore();
         gameOverCanvas.SetActive(true);
         Time.timeScale = 0;
         
@@ -116,9 +150,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void IncreaseScore()
+    public void IncreaseScore(int s)
     {
-        score += 5;
+        score += s;
         
     }
 

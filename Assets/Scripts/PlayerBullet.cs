@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     
-    private int ttl = 250;
+    private int ttl = 100;
     
     public GameObject explosionPrefab;
     GameManager gameManager;
@@ -50,7 +50,7 @@ public class PlayerBullet : MonoBehaviour
         } */
 
 
-        gameManager.IncreaseScore();
+        gameManager.IncreaseScore(100);
         
         
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private int ttl = 250;
+    private int ttl = 100;
     public GameObject explosionPrefab;
     GameManager gameManager;
     // Start is called before the first frame update
@@ -14,9 +14,13 @@ public class EnemyBullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (ttl == 0)
+        {
+            Destroy(gameObject);
+        }
+        ttl--;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

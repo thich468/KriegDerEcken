@@ -10,7 +10,7 @@ public class MainMenuHighScore : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
-        text.text = "High Score:" + PlayerPrefs.GetInt("High Score");
+        text.text = "HiScore  " + PlayerPrefs.GetInt("High Score");
     }
 
     // Update is called once per frame

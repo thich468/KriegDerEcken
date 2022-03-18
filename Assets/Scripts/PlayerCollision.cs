@@ -36,6 +36,7 @@ public class PlayerCollision : MonoBehaviour
             explosion.GetComponent<ParticleSystem>().Play();
             Destroy(explosion, 5f);
             Destroy(collision.gameObject);
+            gameManager.IncreaseScore(25);
             gameManager.GetEnemyList().Remove(collision.gameObject);
             if (Random.Range(0f, 1f) > (1f - healthdropProbability))
             {
@@ -61,6 +62,7 @@ public class PlayerCollision : MonoBehaviour
             }
             GameObject particles = Instantiate(healthParticles, collision.gameObject.transform.position, Quaternion.identity);
             //particles.transform.localScale = particles.transform.localScale * 3;
+            gameManager.IncreaseScore(10);
             particles.GetComponent<ParticleSystem>().Play();
             Destroy(particles, 5f);
             Destroy(collision.gameObject);
