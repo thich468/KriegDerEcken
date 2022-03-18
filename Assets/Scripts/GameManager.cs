@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         //scoreCounter = new ScoreCounter();
         NewWave();
-        PlayerPrefs.SetInt("High Score", 420);
+        //PlayerPrefs.SetInt("High Score", 420);
     }
 
 
